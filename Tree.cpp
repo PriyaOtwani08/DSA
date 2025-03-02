@@ -15,8 +15,9 @@ class node{
       }
 
 //Traversals
+
   void printTreeInPreorder(node* root){
-    //root left right
+    //node left right
    
     if(root==nullptr){
         return;
@@ -26,8 +27,31 @@ class node{
     printTreeInPreorder(root->left);
     printTreeInPreorder(root->right);
   }
+ void PostOrder(node* root){
+   //left right node
+   
+    if(root==nullptr){
+        return;
+    }
+    PostOrder(root->left);
+    PostOrder(root->right);
+    cout<<root->data<<" ";
+  }
 
+ void Inorder(node* root){
+    //left node right
+   
+    if(root==nullptr){
+        return;
+    }
+   
+    Inorder(root->left);
+    cout<<root->data<<" ";
+    Inorder(root->right);
+  }
 };
+
+//Sum of left andd right nodes
 
 int sumOfLeft(node *root){
     if(root== nullptr) return 0;
